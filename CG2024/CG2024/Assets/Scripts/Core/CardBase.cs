@@ -16,6 +16,6 @@ namespace Cards
     {
         [field: SerializeField] public CardType types { get; private set; }
         
-        ~
+        
     }
 }
