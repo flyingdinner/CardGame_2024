@@ -352,6 +352,7 @@
 "Assets/Scripts/Core/PlayerBase.cs"
 "Assets/Scripts/Core/PlayerHuman.cs"
 "Assets/Scripts/Core/StepBase.cs"
+"Assets/Scripts/Core/TurmMachine.cs"
 "Assets/Scripts/Core/Turn.cs"
 -langversion:9.0
 

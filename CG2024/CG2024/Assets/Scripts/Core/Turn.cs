@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace Cards
 {
-    public class Turn : MonoBehaviour
+    [Serializable]
+    public class Turn 
     {
         public event Action<Turn> OnTurnEnd;
         public event Action<Turn> OnTurnStart;
@@ -19,6 +20,7 @@ namespace Cards
         {
             steps = turnSteps;
             player = p;
+            _stepCounter = 0;
         }
 
         public void TurnStart()
