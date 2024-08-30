@@ -78,17 +78,19 @@ namespace Cards
 
         protected virtual void StepProcess_Move(StepBase step, Action callback)
         {
-
+            //TO DO
+            callback?.Invoke();
         }
 
         protected virtual void StepProcess_Shop(StepBase step, Action callback)
         {
-
+            //TO DO
+            callback?.Invoke();
         }
 
         protected virtual void StepProcess_End(StepBase step, Action callback)
         {
-            IE_StepProcess_End(step, callback);
+            StartCoroutine(IE_StepProcess_End(step, callback));
         }
 
         private IEnumerator IE_StepProcess_Start(StepBase step, Action callback)
@@ -114,7 +116,8 @@ namespace Cards
             }
 
             // End animation
-            yield return new WaitForSeconds(0.05f);
+            Debug.Log("IE_StepProcess_End >> ------------------------------------------ ");
+            yield return new WaitForSeconds(0.5f);
             callback.Invoke();
         }
 
@@ -125,10 +128,8 @@ namespace Cards
                 //do card action eventsSE
                 yield return new WaitForSeconds(0.05f);
             }
-            else
-            {
-                yield break;
-            }
+
+            yield return null;
         }
 
         protected virtual IEnumerator IE_StepProcess_Action(StepBase step, Action callback)

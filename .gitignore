@@ -36,3 +36,5 @@
 /Library
 /Temp
 /obj/
+CG2024/CG2024/Library/Artifacts/
+*.log

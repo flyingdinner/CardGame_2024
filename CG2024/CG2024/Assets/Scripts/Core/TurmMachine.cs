@@ -70,15 +70,21 @@ namespace Cards
 
         private void CurrentTurn_OnTurnEnd(Turn obj)
         {
-            obj.OnTurnEnd += CurrentTurn_OnTurnEnd;
+            obj.OnTurnEnd -= CurrentTurn_OnTurnEnd;
             OnPlyerTurnEnd?.Invoke(_currentTurn);
             // TO DO ANIMATION
             StartNextTurn();
         }
 
         private void StartNextTurn()
-        {
+        {            
             _counter++;
+            if (_counter >= turns.Count)
+            {                
+                StartTurmMachine();
+                return;
+            }               
+
             _currentTurn = turns[_counter];
             CurrentTurnStart();
         }
