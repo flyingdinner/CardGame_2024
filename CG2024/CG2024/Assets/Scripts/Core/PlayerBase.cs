@@ -12,14 +12,45 @@ namespace Cards
         life,
         dead,
     }
+
+    public enum DiceValue
+    {
+        heart,
+        energy,
+        action,
+        fail,
+        move,
+        bonusDamage,
+    }
     
 
-    public class PlayerBase : MonoBehaviour
-    {  
+    public class PlayerBase : Button3D, IAtackTarget
+    {
+        public event Action<PlayerBase> OnTryClick;
+
         public int initiative = 1;//To do
 
         [field: SerializeField] public bool isHuman { get; private set; } = false;
         [field: SerializeField] public List<CardBase> cardsInHend { get; private set; }
+        [field: SerializeField] public float _baseAttackRange { get; private set; }
+        [field: SerializeField] public List<DiceValue> currentDices { get; private set; }
+        [field: SerializeField] public GameObject _attackBullet { get; private set; }
+        [field: SerializeField] public int baseDammage { get; private set; } = 1;
+        [field: SerializeField] public int baseBonusDammage { get; private set; } = 2;
+        [field: SerializeField] public HPService HP { get; private set; }
+        [field: SerializeField] public PlayerAnimator anim { get; private set; }
+
+        private void OnEnable()
+        {
+            anim.PlayAlive();
+            HP.OnDead += HP_OnDead;
+        }
+
+
+        private void OnDisable()
+        {
+            HP.OnDead -= HP_OnDead;
+        }
 
         private void OnValidate()
         {
@@ -28,10 +59,15 @@ namespace Cards
                 cardsInHend = new List<CardBase>();
             }
         }
+        private void HP_OnDead(HPService obj)
+        {
+            anim.PlayDead();
+        }
 
         public void StartStep(StepBase step, Action callback)
         {
-            Debug.Log("PlayerBase >> " + gameObject.name + " > start step :" + step.type);
+
+            //Debug.Log("PlayerBase >> " + gameObject.name + " > start step :" + step.type);
             switch (step.type)
             {
                 case StepType.start:
@@ -67,10 +103,9 @@ namespace Cards
 
         protected virtual void StepProcess_Dice(StepBase step, Action callback)
         {
-            //TO DO
-            callback?.Invoke();
-
+            StartCoroutine(IE_StepProcess_Dice(step, callback));
         }
+
         protected virtual void StepProcess_Action(StepBase step, Action callback)
         {
             StartCoroutine(IE_StepProcess_Action(step, callback));
@@ -132,24 +167,92 @@ namespace Cards
             yield return null;
         }
 
-        protected virtual IEnumerator IE_StepProcess_Action(StepBase step, Action callback)
+        protected virtual IEnumerator IE_StepProcess_Dice(StepBase step, Action callback)
         {
-            if (isHuman)
+            currentDices = new List<DiceValue>
             {
-                for (int i = 0; i < cardsInHend.Count; i++)
-                {
-                    if (cardsInHend[i].isActiveCard)
-                    {
-                        cardsInHend[i].ShineAnimationPlay();
-                        yield return new WaitForSeconds(0.2f);
-                    }
-                }
-            }
+                DiceValue.action,
+                DiceValue.move,
+            };
 
-            // End animation
+            Debug.Log("IE_StepProcess_Dice ");
             yield return new WaitForSeconds(0.05f);
             callback.Invoke();
         }
 
+
+        protected virtual IEnumerator IE_StepProcess_Action(StepBase step, Action callback)
+        {
+            Debug.Log(" BASE :: IE_StepProcess_Action");
+
+            yield return new WaitForSeconds(0.05f);
+            callback.Invoke();
+        }
+
+        //IAtackTarget---------------------------------------
+        public Vector3 Position()
+        {
+            return transform.position; 
+        }
+
+        public bool IsDead()
+        {
+            return !HP.alive;
+        }
+
+        public void IncomingDamage(int damage)
+        {
+            HP.AddDamage(damage);
+        }
+        //---------------------------------------------------
+
+        // Button3D
+        public override void OnClick()
+        {
+            OnTryClick?.Invoke(this);
+        }
+
+        protected void UseAttackOnTarget(IAtackTarget target)
+        {
+            //кістку асктіон вже використали
+            int realDamage = baseDammage + baseBonusDammage * GetDiceCountByType(DiceValue.bonusDamage);
+            target.IncomingDamage(realDamage);
+        }
+
+        protected bool TryUseDice(DiceValue value)
+        {
+            if (currentDices.Contains(value))
+            {
+                currentDices.Remove(value);
+                return true;
+            }
+
+            return false;
+        }
+
+        protected int GetDiceCountByType(DiceValue value)
+        {
+            int count = 0;
+            foreach(DiceValue d in currentDices)            
+                if (d == value) count++;            
+
+            return count;
+        }
+
+        protected bool CheckDice_Move()
+        {
+            if (currentDices.Contains(DiceValue.move))
+                return true;
+
+            return false;
+        }
+
+        protected bool CheckActionDice()
+        {
+            if (currentDices.Contains(DiceValue.action))
+                return true;
+
+            return false;
+        }
     }
 }

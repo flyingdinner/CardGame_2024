@@ -38,3 +38,6 @@
 /obj/
 CG2024/CG2024/Library/Artifacts/
 *.log
+CG2024/CG2024/Library/ShaderCache
+CG2024/CG2024/Library/StateCache
+CG2024/CG2024/Temp
