@@ -30,8 +30,9 @@ namespace Cards
 
         public int initiative = 1;//To do
 
+        public List<CardBase> cardsInHend => cardHolder.cardsInHend;
+
         [field: SerializeField] public bool isHuman { get; private set; } = false;
-        [field: SerializeField] public List<CardBase> cardsInHend { get; private set; }
         [field: SerializeField] public float _baseAttackRange { get; private set; }
         [field: SerializeField] public List<DiceValue> currentDices { get; private set; }
         [field: SerializeField] public GameObject _attackBullet { get; private set; }
@@ -39,6 +40,10 @@ namespace Cards
         [field: SerializeField] public int baseBonusDammage { get; private set; } = 2;
         [field: SerializeField] public HPService HP { get; private set; }
         [field: SerializeField] public PlayerAnimator anim { get; private set; }
+
+        [field: SerializeField] public int energy { get; private set; }
+
+        [field: SerializeField] public CardHolder cardHolder { get; private set; }
 
         private void OnEnable()
         {
@@ -52,13 +57,7 @@ namespace Cards
             HP.OnDead -= HP_OnDead;
         }
 
-        private void OnValidate()
-        {
-            if (cardsInHend == null)
-            {
-                cardsInHend = new List<CardBase>();
-            }
-        }
+
         private void HP_OnDead(HPService obj)
         {
             anim.PlayDead();
@@ -151,7 +150,7 @@ namespace Cards
             }
 
             // End animation
-            Debug.Log("IE_StepProcess_End >> ------------------------------------------ ");
+            //Debug.Log("IE_StepProcess_End >> ------------------------------------------ ");
             yield return new WaitForSeconds(0.5f);
             callback.Invoke();
         }
@@ -161,6 +160,8 @@ namespace Cards
             if (card.HaveStateEvents(step.type, out List<CartEventSE> eventsSE))
             {
                 //do card action eventsSE
+                card.UseCartEvent(step.type, this);
+
                 yield return new WaitForSeconds(0.05f);
             }
 
@@ -175,7 +176,19 @@ namespace Cards
                 DiceValue.move,
             };
 
-            Debug.Log("IE_StepProcess_Dice ");
+            // Debug.Log("IE_StepProcess_Dice ");
+            for (int i = 0; i < cardsInHend.Count; i++)
+            {
+                yield return new WaitForSeconds(0.05f);
+                yield return IE_CheckCardForStepAction(cardsInHend[i], step);
+            }
+
+            while (TryUseDice(DiceValue.energy))
+            {
+                energy++;
+                yield return new WaitForSeconds(0.05f);
+            }
+
             yield return new WaitForSeconds(0.05f);
             callback.Invoke();
         }
@@ -202,7 +215,13 @@ namespace Cards
 
         public void IncomingDamage(int damage)
         {
-            HP.AddDamage(damage);
+            if (damage > 0)
+            {
+                HP.AddDamage(cardHolder.UseCardArmor(damage));
+            } else
+            {
+                HP.AddDamage(damage);
+            }
         }
         //---------------------------------------------------
 
@@ -253,6 +272,30 @@ namespace Cards
                 return true;
 
             return false;
+        }
+
+        public void AddDices(List<DiceValue> dices)
+        {
+            currentDices.AddRange(dices);
+        }
+
+        public void AddBoost(int hp, int e)
+        {
+            //Debug.Log(" Boost up >> hp : " + hp + " >> e : " +e);
+            IncomingDamage(-hp);
+            energy += e;
+        }
+
+        public void AddCardInHend(CardBase card)
+        {
+            if(cardHolder.TryAddInHolder(card))
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

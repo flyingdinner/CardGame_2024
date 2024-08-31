@@ -30,13 +30,14 @@ namespace Cards
             ShowButtons3D(false);            
         }
 
+
         protected override IEnumerator IE_StepProcess_Action(StepBase step, Action callback)
         {
             ShowButtons3D(false);
 
             dellStepProcess = () => { 
                 callback.Invoke();
-                Debug.Log("PlayerDelegate");
+                //Debug.Log("PlayerDelegate");
             };
 
             if (isHuman)
@@ -57,8 +58,6 @@ namespace Cards
             yield return new WaitForSeconds(0.05f);
 
             ShowButtons3D(true);
-            //
-            //ActionCompleted();
         }
         
 
@@ -181,7 +180,6 @@ namespace Cards
         {
             ShowButtons3D(true);
         }
-
 
         private void ActionCompleted()
         {

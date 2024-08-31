@@ -597,7 +597,6 @@ GameObject:
   - component: {fileID: 4630039945244538220}
   - component: {fileID: 4630039945244538223}
   - component: {fileID: 4630039945244538222}
-  - component: {fileID: 4630039945244538221}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -670,20 +669,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4630039945244538221
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4630039945244538219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &4630039945331739746
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +713,6 @@ GameObject:
   - component: {fileID: 4630039945468779953}
   - component: {fileID: 4630039945468779956}
   - component: {fileID: 4630039945468779955}
-  - component: {fileID: 4630039945468779954}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -801,19 +785,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4630039945468779954
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4630039945468779952}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4630039946357452508
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +796,8 @@ GameObject:
   - component: {fileID: 4630039946357452510}
   - component: {fileID: 4630039946357452509}
   - component: {fileID: 2757933607651356610}
+  - component: {fileID: 2811385938158027272}
+  - component: {fileID: 41343977615848567}
   m_Layer: 0
   m_Name: __ Player Human __
   m_TagString: Untagged
@@ -867,11 +840,10 @@ MonoBehaviour:
   onMeLight: {fileID: 5544252689844969094}
   initiative: 7
   <isHuman>k__BackingField: 1
-  <cardsInHend>k__BackingField: []
   <_baseAttackRange>k__BackingField: 3
   <currentDices>k__BackingField: 
   <_attackBullet>k__BackingField: {fileID: 4525696692971614111}
-  <baseDammage>k__BackingField: 5
+  <baseDammage>k__BackingField: 1
   <baseBonusDammage>k__BackingField: 2
   <HP>k__BackingField:
     _baseHP: 10
@@ -879,6 +851,8 @@ MonoBehaviour:
     _currentHP: 10
     _dead: 0
   <anim>k__BackingField: {fileID: 2757933607651356610}
+  <energy>k__BackingField: 0
+  <cardHolder>k__BackingField: {fileID: 0}
   currentPlayerSelectStatus: 0
   buttons3D:
   - {fileID: 7410073626697492186}
@@ -901,6 +875,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a998560345c599948bd154deaad33a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2811385938158027272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630039946357452508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3310226dabc250344b0fa6e577c8437c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4630039946357452509}
+--- !u!65 &41343977615848567
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630039946357452508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.28, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4946098184176990149
 GameObject:
   m_ObjectHideFlags: 0

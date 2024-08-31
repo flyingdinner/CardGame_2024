@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 523776441099327557}
   - {fileID: 4624409350535237271}
+  - {fileID: 5534135261910953923}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -51,7 +52,6 @@ MonoBehaviour:
   onMeLight: {fileID: 2742110463535157318}
   initiative: 1
   <isHuman>k__BackingField: 0
-  <cardsInHend>k__BackingField: []
   <_baseAttackRange>k__BackingField: 0
   <currentDices>k__BackingField: 
   <_attackBullet>k__BackingField: {fileID: 0}
@@ -63,6 +63,8 @@ MonoBehaviour:
     _currentHP: 5
     _dead: 0
   <anim>k__BackingField: {fileID: 1524762739797509220}
+  <energy>k__BackingField: 0
+  <cardHolder>k__BackingField: {fileID: 1776266685739850831}
 --- !u!65 &523776439436078579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -316,6 +318,222 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1738312397237623133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9079878862345412124}
+  m_Layer: 0
+  m_Name: CARD--zerro
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9079878862345412124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738312397237623133}
+  m_LocalRotation: {x: 0.000000059604638, y: 0.000000015865679, z: -0.000000029300223, w: 1}
+  m_LocalPosition: {x: -0.048000097, y: -0.5160003, z: 1.1939999}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5534135261910953923}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3789846338809463189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418182680797580725}
+  m_Layer: 0
+  m_Name: CARD--zerro (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &418182680797580725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789846338809463189}
+  m_LocalRotation: {x: 0.000000059604638, y: 0.000000015865679, z: -0.000000029300223, w: 1}
+  m_LocalPosition: {x: 0.20899987, y: -0.4900002, z: 1.189}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5534135261910953923}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5136593648952776535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5534135261910953923}
+  - component: {fileID: 1776266685739850831}
+  m_Layer: 0
+  m_Name: CardPivot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5534135261910953923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136593648952776535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.732, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9079878862345412124}
+  - {fileID: 418182680797580725}
+  - {fileID: 2844104785501138884}
+  - {fileID: 662151352596584264}
+  - {fileID: 5908519972753699068}
+  m_Father: {fileID: 523776439436078578}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776266685739850831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136593648952776535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804623e945a2d0b49b78b2df4e69ed55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <cardsInHend>k__BackingField: []
+  _cardPositions:
+  - point: {fileID: 9079878862345412124}
+    card: {fileID: 0}
+  - point: {fileID: 418182680797580725}
+    card: {fileID: 0}
+  - point: {fileID: 2844104785501138884}
+    card: {fileID: 0}
+  - point: {fileID: 662151352596584264}
+    card: {fileID: 0}
+  - point: {fileID: 5908519972753699068}
+    card: {fileID: 0}
+--- !u!1 &5308906645247109118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2844104785501138884}
+  m_Layer: 0
+  m_Name: CARD--zerro (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2844104785501138884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5308906645247109118}
+  m_LocalRotation: {x: 0.000000059604638, y: 0.000000015865679, z: -0.000000029300223, w: 1}
+  m_LocalPosition: {x: 0.47699976, y: -0.48399997, z: 1.1750002}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5534135261910953923}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5873448092551631513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5908519972753699068}
+  m_Layer: 0
+  m_Name: CARD--zerro (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5908519972753699068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873448092551631513}
+  m_LocalRotation: {x: 0.000000059604638, y: 0.000000015865679, z: -0.000000029300223, w: 1}
+  m_LocalPosition: {x: 1.012, y: -0.48299992, z: 1.1590003}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5534135261910953923}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8248225571977087251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662151352596584264}
+  m_Layer: 0
+  m_Name: CARD--zerro (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &662151352596584264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248225571977087251}
+  m_LocalRotation: {x: 0.000000059604638, y: 0.000000015865679, z: -0.000000029300223, w: 1}
+  m_LocalPosition: {x: 0.7400001, y: -0.49000007, z: 1.1659999}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5534135261910953923}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2285141483249392561
 PrefabInstance:
   m_ObjectHideFlags: 0
