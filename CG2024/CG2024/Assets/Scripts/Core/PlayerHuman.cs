@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 namespace Cards
 {
@@ -23,6 +24,7 @@ namespace Cards
         public PlayerSelectState currentPlayerSelectStatus = PlayerSelectState.notControllStep;
 
         [SerializeField] private Button3D[] buttons3D;
+        [SerializeField] private Button _skipButton;
 
         protected override void Start()
         {
@@ -54,9 +56,7 @@ namespace Cards
             yield return new WaitForSeconds(0.05f);
 
             ShowButtons3D(true);
-        }
-        
-
+        }     
 
         public void MoveTo(MoveButton moveb)
         {
@@ -77,7 +77,9 @@ namespace Cards
 
         public void ShowButtons3D(bool on)
         {
-            foreach(Button3D b3 in buttons3D)
+            _skipButton.gameObject.SetActive(on);
+
+            foreach (Button3D b3 in buttons3D)
             {
                 b3.gameObject.SetActive(on);
             }
@@ -87,6 +89,14 @@ namespace Cards
             {
                 PlayerService.instanse.OnClickOnAtackTarget += OnAttackTargetSelected;
             }
+            OnStatusCheng?.Invoke(this);
+        }
+
+        public void OnSkipButton()// from unity event
+        {
+            Debug.Log(">> OnSkipButton >>");
+            dellStepProcess?.Invoke();
+            ShowButtons3D(false);
         }
 
         private void OnAttackTargetSelected(IAtackTarget target)

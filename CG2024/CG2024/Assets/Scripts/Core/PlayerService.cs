@@ -76,6 +76,16 @@ namespace Cards
             return aliveTargets;
         }
 
+        public PlayerBase GetNearestHumanPlayer(Vector3 point)
+        {
+            if(playersHuman.Count == 1)
+            {
+                return playersHuman[0];
+            }
+
+            return null;//TO DO
+        }
+
         public List<IAtackTarget> GetAllAliveInRange(Vector3 point, float range, IAtackTarget centraIAT = null)
         {
 
@@ -98,6 +108,50 @@ namespace Cards
             return targetsInRange.OrderBy(target => Vector3.Distance(point, target.Position())).ToList();
         }
 
+        public Vector3 GetNearestPointToMove(Vector3 start, Vector3 target)
+        {
+            Vector3[] vectorsToMove =
+                {
+                Vector3.back,
+                Vector3.down,
+                Vector3.right,
+                Vector3.left,
+                new Vector3(1,1,0),
+                new Vector3(1,-1,0),
+                new Vector3(-1,1,0),
+                new Vector3(-1,-1,0),
+            };
 
+            Vector3 nearestPosition = Vector3.zero;
+            float nearestDistance = 99999f;
+
+            foreach (Vector3 move in vectorsToMove)
+            {
+                Vector3 newPosition = start + move;
+
+                if (CheckPointIsBusy(newPosition))
+                    continue;
+
+                float distance = Vector3.Distance(newPosition, target);
+
+                if (distance < nearestDistance)
+                {
+                    nearestPosition = newPosition;
+                    nearestDistance = distance;
+                }
+            }
+
+            return nearestPosition;
+        }
+
+        public bool CheckPointIsBusy(Vector3 vector3)
+        {
+            foreach(IAtackTarget iat in aliveTargets)            
+                if (Vector3.Distance(vector3, iat.Position()) < 0.1f)
+                    return true;
+            
+
+            return false;
+        }
     }
 }

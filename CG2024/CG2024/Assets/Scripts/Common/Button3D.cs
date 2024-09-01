@@ -6,6 +6,11 @@ public abstract class Button3D : MonoBehaviour
 {
     [SerializeField] private GameObject onMeLight;
 
+    private void OnDisable()
+    {
+        onMeLight.SetActive(false);
+    }
+
     protected virtual void Start()
     {
         onMeLight.SetActive(false);
@@ -36,6 +41,6 @@ public abstract class Button3D : MonoBehaviour
         OnClick();
     }
 
-    public abstract void OnClick();
+    public abstract void OnClick();    
 
 }
