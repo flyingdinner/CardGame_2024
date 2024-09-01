@@ -24,11 +24,14 @@ namespace Cards
     }
     
 
+
     public class PlayerBase : Button3D, IAtackTarget
     {
         public event Action<PlayerBase> OnTryClick;
 
         public int initiative = 1;//To do
+
+        public float attackRange => _baseAttackRange + cardHolder.bonusDamage.rangeBonus;
 
         public List<CardBase> cardsInHend => cardHolder.cardsInHend;
 
@@ -44,6 +47,8 @@ namespace Cards
         [field: SerializeField] public int energy { get; private set; }
 
         [field: SerializeField] public CardHolder cardHolder { get; private set; }
+
+        
 
         private void OnEnable()
         {
@@ -107,6 +112,13 @@ namespace Cards
 
         protected virtual void StepProcess_Action(StepBase step, Action callback)
         {
+            CardBonusDamage cardBonusDamage = new CardBonusDamage();
+
+            foreach (CardBase cb in cardsInHend)
+                cardBonusDamage.TryAddDamageCard(cb);
+
+            cardHolder.SetCardBonusDamage(cardBonusDamage);
+
             StartCoroutine(IE_StepProcess_Action(step, callback));
         }
 
@@ -202,6 +214,67 @@ namespace Cards
             callback.Invoke();
         }
 
+        protected IEnumerator IE_Attack(IAtackTarget target)
+        {
+            //animation
+            CardBonusDamage cardBonusDamage = new CardBonusDamage();
+
+            foreach(CardBase cb in cardsInHend)
+            {
+                if (cardBonusDamage.TryAddDamageCard(cb))
+                {
+                    cb.PlaySinglPulse();
+                    yield return new WaitForSeconds(0.1f);
+                }
+            }
+
+            //            
+            cardHolder.SetCardBonusDamage(cardBonusDamage);
+
+            yield return new WaitForSeconds(0.1f);
+
+            _attackBullet.SetActive(true);
+            _attackBullet.transform.position = transform.position;
+            Vector3 startPosition = transform.position;
+            Vector3 targetPoint = target.Position();
+            float timeElapsed = 0f;
+            float duration = 0.2f;
+
+
+            while (timeElapsed < duration)
+            {
+                _attackBullet.transform.position = Vector3.Lerp(startPosition, targetPoint, timeElapsed / duration);
+                timeElapsed += Time.deltaTime;
+                yield return null; // чекаємо наступного кадру
+            }
+
+            // У кінці гарантовано встановлюємо цільову позицію
+            _attackBullet.transform.position = targetPoint;
+            yield return new WaitForSeconds(0.1f);
+
+            _attackBullet.SetActive(false);
+
+            yield return UseAttackOnTarget(target);   
+
+            if (!CheckActionDice() && !CheckDice_Move())
+            {
+                ActionCompleted();
+            }
+            else
+            {
+                ReInitTurn();
+            }
+        }
+
+
+        protected virtual void ReInitTurn()
+        {
+        }
+
+        protected virtual void ActionCompleted()
+        {  
+        }
+
         //IAtackTarget---------------------------------------
         public Vector3 Position()
         {
@@ -231,11 +304,24 @@ namespace Cards
             OnTryClick?.Invoke(this);
         }
 
-        protected void UseAttackOnTarget(IAtackTarget target)
+        protected IEnumerator UseAttackOnTarget(IAtackTarget target)
         {
             //кістку асктіон вже використали
-            int realDamage = baseDammage + baseBonusDammage * GetDiceCountByType(DiceValue.bonusDamage);
+
+            int realDamage = cardHolder.UseCardBonusDamage(baseDammage + baseBonusDammage * GetDiceCountByType(DiceValue.bonusDamage));
             target.IncomingDamage(realDamage);
+            yield return new WaitForSeconds(0.1f);
+            Debug.Log("cardHolder.HaveAoEBonus : " + cardHolder.HaveAoEBonus());
+            if (cardHolder.HaveAoEBonus())
+            {
+                List<IAtackTarget> aoeList =  PlayerService.instanse.GetAllAliveInRange(target.Position(), cardHolder.bonusDamage.AoERadius, target);
+                foreach (IAtackTarget iat in aoeList)
+                {
+                    Debug.Log(">>> CardHolder.HaveAoEBonus >>>");
+                    iat.IncomingDamage(realDamage);
+                    yield return new WaitForSeconds(0.05f);
+                }
+            }
         }
 
         protected bool TryUseDice(DiceValue value)
@@ -294,7 +380,7 @@ namespace Cards
             }
             else
             {
-
+                //pri add in bug
             }
         }
     }

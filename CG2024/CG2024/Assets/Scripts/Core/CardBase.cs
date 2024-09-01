@@ -15,8 +15,9 @@ namespace Cards
 
     public enum CardReaction
     {
-        onHeal,
-        onDamage,
+        onGetHeal,
+        onGetDamage,
+        onDoDamage,
     }
 
     [Serializable]
@@ -30,9 +31,25 @@ namespace Cards
     [Serializable]
     public class PassiveStats
     {
+        public bool haveDamageBonus = false;
+
         public int maxHP = 0;
-        public int armor = 0;
+        public int armor = 0;        
         public int armorTemporarily = 0;
+        public float damageMultiplier = 0;
+        public float rangeBonus = 0;
+        public float AoERadius = 0;
+    }
+
+    [Serializable]
+    public class PfxContainer
+    {
+        public bool usePFX;
+        public ParticleSystem pfxStart;
+        public ParticleSystem pfxMove;
+        public ParticleSystem pfxEnd;
+        public ParticleSystem pfxUse;
+
     }
 
     public class CardBase : MonoBehaviour
@@ -43,7 +60,8 @@ namespace Cards
         [field: SerializeField] public CardType types { get; private set; }
         [field: SerializeField] public CartEventSE[] cardEventsSE { get; private set; }
 
-
+        [field: SerializeField] public PfxContainer pfxContainer { get; private set; }
+                
         public bool HaveStateEvents(StepType stepType , out List<CartEventSE> eventsSE)
         {
             eventsSE = new List<CartEventSE>();
@@ -69,6 +87,11 @@ namespace Cards
         }
 
         public void ShineAnimationPlay(bool loop = false)
+        {
+
+        }
+
+        public void PlaySinglPulse()
         {
 
         }

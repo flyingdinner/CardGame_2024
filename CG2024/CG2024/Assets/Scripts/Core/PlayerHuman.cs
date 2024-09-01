@@ -35,22 +35,18 @@ namespace Cards
         {
             ShowButtons3D(false);
 
-            dellStepProcess = () => { 
-                callback.Invoke();
-                //Debug.Log("PlayerDelegate");
-            };
-
-            if (isHuman)
+            // Init Damage
+            
+            dellStepProcess = () => { callback.Invoke(); };
+            for (int i = 0; i < cardsInHend.Count; i++)
             {
-                for (int i = 0; i < cardsInHend.Count; i++)
+                if (cardsInHend[i].isActiveCard)
                 {
-                    if (cardsInHend[i].isActiveCard)
-                    {
-                        cardsInHend[i].ShineAnimationPlay();
-                        yield return new WaitForSeconds(0.2f);
-                    }
+                    cardsInHend[i].ShineAnimationPlay();
+                    yield return new WaitForSeconds(0.2f);
                 }
             }
+
 
             OnStatusCheng?.Invoke(this);
             currentPlayerSelectStatus = PlayerSelectState.actionStap;
@@ -95,7 +91,7 @@ namespace Cards
 
         private void OnAttackTargetSelected(IAtackTarget target)
         {
-            if(Vector3.Distance(target.Position(), transform.position) <= _baseAttackRange && !target.IsDead())
+            if(Vector3.Distance(target.Position(), transform.position) <= attackRange && !target.IsDead())
             {
                 if (TryUseDice(DiceValue.action))
                 {
@@ -106,46 +102,7 @@ namespace Cards
                 }
             }
                 Debug.Log(">>>>> ------- DEAD or Distanse ------------");
-        }
-
-        protected IEnumerator IE_Attack(IAtackTarget target)
-        {
-            //animation
-
-            yield return new WaitForSeconds(0.1f);
-
-            _attackBullet.SetActive(true);
-            _attackBullet.transform.position = transform.position;
-            Vector3 startPosition = transform.position;
-            Vector3 targetPoint = target.Position();
-            float timeElapsed = 0f;
-            float duration = 0.2f;
-
-
-            while (timeElapsed < duration)
-            {
-                _attackBullet.transform.position = Vector3.Lerp(startPosition, targetPoint, timeElapsed / duration);
-                timeElapsed += Time.deltaTime;
-                yield return null; // чекаємо наступного кадру
-            }
-
-            // У кінці гарантовано встановлюємо цільову позицію
-            _attackBullet.transform.position = targetPoint;
-            yield return new WaitForSeconds(0.1f);
-
-            _attackBullet.SetActive(false);
-            UseAttackOnTarget(target);
-            yield return null;
-
-            if (!CheckActionDice() && !CheckDice_Move())
-            {
-                ActionCompleted();
-            }
-            else
-            {
-                ReInitTurn();
-            }
-        }
+        }        
 
         protected IEnumerator IeMoveTo(MoveButton moveb)
         {
@@ -176,12 +133,12 @@ namespace Cards
             }
         }
 
-        private void ReInitTurn()
+        protected override void ReInitTurn()
         {
             ShowButtons3D(true);
         }
 
-        private void ActionCompleted()
+        protected override void ActionCompleted()
         {
             dellStepProcess.Invoke();
             currentPlayerSelectStatus = PlayerSelectState.notControllStep;

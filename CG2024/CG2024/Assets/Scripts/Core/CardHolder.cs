@@ -6,6 +6,58 @@ using System;
 namespace Cards
 {
 
+    [Serializable]
+    public class CardBonusDamage
+    {
+        public float multiplier = 1f;
+        public float rangeBonus = 0f;
+        public float AoERadius = 0f;
+
+        public List<ParticleSystem> _pfxOnEnd;
+        public List<ParticleSystem> _pfxOnFly;
+        public List<ParticleSystem> _pfxOnStart;
+
+        public CardBonusDamage ()
+        {
+            multiplier = 1f;
+            rangeBonus = 0f;
+            AoERadius = 0;
+            _pfxOnEnd = new List<ParticleSystem>();
+            _pfxOnFly = new List<ParticleSystem>();
+            _pfxOnStart = new List<ParticleSystem>();
+        }
+
+        public int CalculateDammage(int damage)
+        {
+            return (int)((float)damage * multiplier);
+        }
+
+        public bool TryAddDamageCard(CardBase cb)
+        {
+            if (cb.passiveStats.haveDamageBonus)
+            {
+                multiplier += cb.passiveStats.damageMultiplier;
+                rangeBonus += cb.passiveStats.rangeBonus;
+                AoERadius += cb.passiveStats.AoERadius;
+
+                if (cb.pfxContainer == null) return true;
+                if (cb.pfxContainer.usePFX)
+                {
+                    if (cb.pfxContainer.pfxStart != null)
+                        _pfxOnStart.Add(cb.pfxContainer.pfxStart);
+
+                    if (cb.pfxContainer.pfxMove != null)
+                        _pfxOnFly.Add(cb.pfxContainer.pfxMove);
+
+                    if (cb.pfxContainer.pfxEnd != null)
+                        _pfxOnEnd.Add(cb.pfxContainer.pfxEnd);
+                }
+                return true;
+            }
+            return false;
+        }
+    }
+
     public class CardHolder : MonoBehaviour
     {
         [Serializable]
@@ -15,7 +67,8 @@ namespace Cards
             public CardBase card;
         }
         [field: SerializeField] public List<CardBase> cardsInHend { get; private set; }
-                
+        [field: SerializeField] public CardBonusDamage bonusDamage { get; private set; }
+
         [SerializeField] private HolderPoint[] _cardPositions;
 
         private void OnValidate()
@@ -25,7 +78,7 @@ namespace Cards
                 cardsInHend = new List<CardBase>();
             }
         }
-
+        
         public bool TryAddInHolder(CardBase card)
         {
             foreach(HolderPoint hp in _cardPositions)
@@ -66,5 +119,20 @@ namespace Cards
             return result;            
         }
 
+        public int UseCardBonusDamage(int damage)
+        {
+
+           return bonusDamage.CalculateDammage(damage);
+        }
+
+        public void SetCardBonusDamage(CardBonusDamage bd)
+        {
+            bonusDamage = bd;
+        }
+
+        public bool HaveAoEBonus()
+        {
+            return bonusDamage.AoERadius > 0;
+        }
     }
 }
