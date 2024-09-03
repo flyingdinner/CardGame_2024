@@ -59,6 +59,19 @@ namespace Cards
             OnClickOnAtackTarget?.Invoke(obj);
         }
 
+        public bool AllAIEnemyIsDead()
+        {
+            foreach (PlayerBase pb in playersAI)
+            {
+                if (!pb.IsDead())
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         public List<IAtackTarget> GetAllAlive()
         {
             List<IAtackTarget> allTargets = new List<IAtackTarget>();

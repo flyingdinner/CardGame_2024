@@ -26,13 +26,6 @@ namespace Cards
             playerService = GetComponent<PlayerService>();
         }
 
-        private void Start()
-        {
-
-            //for test~
-            StartTurmMachine();
-        }
-
         public void StartTurmMachine()
         {
             turns = new List<Turn>();
@@ -53,6 +46,12 @@ namespace Cards
             }
 
             StartGameLoop();
+        }
+
+        public void StopTurmMachine()
+        {
+
+            _currentTurn.OnTurnEnd -= CurrentTurn_OnTurnEnd;
         }
 
         private Turn CreatTurn(PlayerBase pb)
@@ -109,10 +108,10 @@ namespace Cards
             obj.OnTurnEnd -= CurrentTurn_OnTurnEnd;
             OnPlyerTurnEnd?.Invoke(_currentTurn);
             // TO DO ANIMATION
-            StartNextTurn();
+            //StartNextTurn();
         }
 
-        private void StartNextTurn()
+        public void StartNextTurn()
         {            
             _counter++;
             if (_counter >= turns.Count)

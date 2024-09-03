@@ -25,13 +25,17 @@ namespace Cards
 
         [SerializeField] private Button3D[] buttons3D;
         [SerializeField] private Button _skipButton;
+        [SerializeField] private Button _buttonShopOpen;
+        [SerializeField] private Button _buttonNextTurn;
         [SerializeField] private PlayerDicePanel _dicepanel;
         [SerializeField] private CardShopPanel _shop;
 
         protected override void Start()
         {
             base.Start();
-            ShowButtons3D(false);            
+            ShowButtons3D(false);
+            _buttonShopOpen.gameObject.SetActive(false);
+            _buttonNextTurn.gameObject.SetActive(false);
         }
 
 
@@ -250,12 +254,29 @@ namespace Cards
                 Debug.Log("StepProcess_Shop");
             };
 
+            _buttonShopOpen.gameObject.SetActive(true);
+            _buttonNextTurn.gameObject.SetActive(true);
 
+        }
+
+        public void ButtonShowShop()
+        {
+
+            _buttonShopOpen.gameObject.SetActive(false);
+            _buttonNextTurn.gameObject.SetActive(false);
             _shop.Show(this);
         }
 
         public void OnShopCloseButton()
         {
+            _buttonShopOpen.gameObject.SetActive(true);
+            _buttonNextTurn.gameObject.SetActive(true);
+        }
+
+        public void ButtonNextTurn()
+        {
+            _buttonShopOpen.gameObject.SetActive(false);
+            _buttonNextTurn.gameObject.SetActive(false);
             dellStepProcess.Invoke();
             dellStepProcess = null;
         }

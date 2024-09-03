@@ -54,7 +54,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2574345118159399690, guid: ed9909537a2faa147b5394091d8dd9ac, type: 3}
       propertyPath: price
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2574345118159399690, guid: ed9909537a2faa147b5394091d8dd9ac, type: 3}
       propertyPath: <cardEventsSE>k__BackingField.Array.size
@@ -67,6 +67,10 @@ PrefabInstance:
     - target: {fileID: 2574345118159399690, guid: ed9909537a2faa147b5394091d8dd9ac, type: 3}
       propertyPath: <cardEventsSE>k__BackingField.Array.data[0].stepType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505810125814701476, guid: ed9909537a2faa147b5394091d8dd9ac, type: 3}
+      propertyPath: m_text
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4544473213905947896, guid: ed9909537a2faa147b5394091d8dd9ac, type: 3}
       propertyPath: m_RootOrder
@@ -115,6 +119,18 @@ PrefabInstance:
     - target: {fileID: 6406270747721724637, guid: ed9909537a2faa147b5394091d8dd9ac, type: 3}
       propertyPath: m_Name
       value: CARD +1 Energy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430728689556455602, guid: ed9909537a2faa147b5394091d8dd9ac, type: 3}
+      propertyPath: m_text
+      value: "\u044F\u0434\u0435\u0440\u043D\u0430 \u0431\u0430\u0442\u0430\u0440\u0435\u0439\u043A\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430728689556455602, guid: ed9909537a2faa147b5394091d8dd9ac, type: 3}
+      propertyPath: m_fontSize
+      value: 74.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430728689556455602, guid: ed9909537a2faa147b5394091d8dd9ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 74.2
       objectReference: {fileID: 0}
     - target: {fileID: 9004112205044359501, guid: ed9909537a2faa147b5394091d8dd9ac, type: 3}
       propertyPath: m_text
