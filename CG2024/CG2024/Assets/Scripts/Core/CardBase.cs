@@ -54,14 +54,18 @@ namespace Cards
 
     public class CardBase : MonoBehaviour
     {
+
         public bool isActiveCard => IsActiveCard();
 
         public PassiveStats passiveStats;
+
+        [field: SerializeField] public int price = 0;
         [field: SerializeField] public CardType types { get; private set; }
         [field: SerializeField] public CartEventSE[] cardEventsSE { get; private set; }
 
         [field: SerializeField] public PfxContainer pfxContainer { get; private set; }
-                
+        
+
         public bool HaveStateEvents(StepType stepType , out List<CartEventSE> eventsSE)
         {
             eventsSE = new List<CartEventSE>();

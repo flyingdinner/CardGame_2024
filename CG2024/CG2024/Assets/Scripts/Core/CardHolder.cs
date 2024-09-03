@@ -17,7 +17,7 @@ namespace Cards
         public List<ParticleSystem> _pfxOnFly;
         public List<ParticleSystem> _pfxOnStart;
 
-        public CardBonusDamage ()
+        public CardBonusDamage()
         {
             multiplier = 1f;
             rangeBonus = 0f;
@@ -58,14 +58,21 @@ namespace Cards
         }
     }
 
+    [Serializable]
+    public class HolderPoint
+    {
+        public Transform point;
+        public CardBase card;
+        //
+        public GameObject buttonUse;
+        public GameObject buttonRemove;
+    }
+
+    //-----------------------------------------------------------------------------------
     public class CardHolder : MonoBehaviour
     {
-        [Serializable]
-        private class HolderPoint
-        {
-            public Transform point;
-            public CardBase card;
-        }
+        public HolderPoint[] cardPositions => _cardPositions;
+
         [field: SerializeField] public List<CardBase> cardsInHend { get; private set; }
         [field: SerializeField] public CardBonusDamage bonusDamage { get; private set; }
 
@@ -78,10 +85,10 @@ namespace Cards
                 cardsInHend = new List<CardBase>();
             }
         }
-        
+
         public bool TryAddInHolder(CardBase card)
         {
-            foreach(HolderPoint hp in _cardPositions)
+            foreach (HolderPoint hp in _cardPositions)
             {
                 if (hp.card == null)
                 {
@@ -94,7 +101,24 @@ namespace Cards
             return false;
         }
 
-        private void AddInPoint(HolderPoint hp ,CardBase card)
+        public void OnShopClosed(List<CardBase> cards)
+        {            
+            cardsInHend = new List<CardBase>();
+
+            foreach (HolderPoint cp in _cardPositions)
+            {
+                cp.card = null;
+            }
+
+            Debug.Log("OnShopClosed :: cards.Count " + cards.Count + " :: _cardPositions " + _cardPositions.Length);
+            for (int i = 0; i < cards.Count; i++)
+            {
+                AddInPoint(_cardPositions[i], cards[i]);
+            }
+            
+        }
+
+        private void AddInPoint(HolderPoint hp, CardBase card)
         {
             cardsInHend.Add(card);
             hp.card = card;
@@ -108,21 +132,21 @@ namespace Cards
         {
             int armor = 0;
 
-            foreach(CardBase card in cardsInHend)
+            foreach (CardBase card in cardsInHend)
             {
-               armor += card.passiveStats.armor;
+                armor += card.passiveStats.armor;
             }
 
             int result = Math.Clamp(damage - armor, 0, damage);
 
-            Debug.Log("UseCardsArmore : damage " + damage +  " - armore " + armor + " = result : " + result);
-            return result;            
+            Debug.Log("UseCardsArmore : damage " + damage + " - armore " + armor + " = result : " + result);
+            return result;
         }
 
         public int UseCardBonusDamage(int damage)
         {
 
-           return bonusDamage.CalculateDammage(damage);
+            return bonusDamage.CalculateDammage(damage);
         }
 
         public void SetCardBonusDamage(CardBonusDamage bd)
