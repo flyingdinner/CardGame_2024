@@ -146,10 +146,7 @@ namespace Cards
         }
 
         private IEnumerator IE_StepProcess_Start(StepBase step, Action callback)
-        {
-            _currentDices = new List<DiceValue>();
-            _currentBonusDices = new List<DiceValue>();
-
+        {           
             for (int i = 0; i < cardsInHend.Count; i++)
             {
                 yield return new WaitForSeconds(0.05f);
@@ -179,6 +176,10 @@ namespace Cards
             // End animation
             //Debug.Log("IE_StepProcess_End >> ------------------------------------------ ");
             yield return new WaitForSeconds(0.5f);
+
+            _currentDices = new List<DiceValue>();
+            _currentBonusDices = new List<DiceValue>();
+
             callback.Invoke();
         }
 
@@ -381,7 +382,7 @@ namespace Cards
             return false;
         }
 
-        protected int GetDiceCountByType(DiceValue value)
+        public int GetDiceCountByType(DiceValue value)
         {
             int count = 0;
             foreach(DiceValue d in currenAllDices)            

@@ -98,7 +98,8 @@ namespace Cards
                 {
                     for (int i = 0; i < playersAI.Count; i++)
                     {
-                        Destroy(playersAI[i]);//TODO pool
+                        Debug.Log(" playersAI[i] " + playersAI[i].name);
+                        Destroy(playersAI[i].gameObject);//TODO pool
                     }
                 }
             }
@@ -159,13 +160,13 @@ namespace Cards
             Vector3[] vectorsToMove =
                 {
                 Vector3.back,
-                Vector3.down,
+                Vector3.forward,
                 Vector3.right,
                 Vector3.left,
-                new Vector3(1,1,0),
-                new Vector3(1,-1,0),
-                new Vector3(-1,1,0),
-                new Vector3(-1,-1,0),
+                new Vector3(1,0,1),
+                new Vector3(1,0,-1),
+                new Vector3(-1,0,1),
+                new Vector3(-1,0,-1),
             };
 
             Vector3 nearestPosition = Vector3.zero;
@@ -174,6 +175,9 @@ namespace Cards
             foreach (Vector3 move in vectorsToMove)
             {
                 Vector3 newPosition = start + move;
+
+                if (!GridHolder.CanMoveToPoint(newPosition))
+                    continue;
 
                 if (CheckPointIsBusy(newPosition))
                     continue;

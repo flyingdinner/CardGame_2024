@@ -21,6 +21,7 @@ namespace Cards
 
         private PlayerDelegate dellStepProcess;
 
+        public bool inActionState => currentPlayerSelectStatus == PlayerSelectState.actionStap;
         public PlayerSelectState currentPlayerSelectStatus = PlayerSelectState.notControllStep;
 
         [SerializeField] private Button3D[] buttons3D;
@@ -194,10 +195,10 @@ namespace Cards
             {
                 transform.position = Vector3.Lerp(startPosition, targetPoint, timeElapsed / duration);
                 timeElapsed += Time.deltaTime;
-                yield return null; // чекаємо наступного кадру
+                yield return null; // С‡РµРєР°С”РјРѕ РЅР°СЃС‚СѓРїРЅРѕРіРѕ РєР°РґСЂСѓ
             }
 
-            // У кінці гарантовано встановлюємо цільову позицію
+            // РЈ РєС–РЅС†С– РіР°СЂР°РЅС‚РѕРІР°РЅРѕ РІСЃС‚Р°РЅРѕРІР»СЋС”РјРѕ С†С–Р»СЊРѕРІСѓ РїРѕР·РёС†С–СЋ
             transform.position = targetPoint;
             yield return new WaitForSeconds(0.1f);
 

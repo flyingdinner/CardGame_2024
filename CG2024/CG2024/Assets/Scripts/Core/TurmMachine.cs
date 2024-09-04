@@ -24,9 +24,7 @@ namespace Cards
         {
             if(playerService==null)
             playerService = GetComponent<PlayerService>();
-        }
-
-        
+        }        
 
         public void StartTurmMachine()
         {
@@ -39,8 +37,15 @@ namespace Cards
 
             _players = allPlayers.ToArray();
             Array.Sort(_players, (x, y) => x.initiative.CompareTo(y.initiative));
-            
-            foreach(PlayerBase pb in _players)
+
+            foreach (PlayerBase pb in playerService.playersAI)
+            {
+                if (!pb.HP.alive) continue;
+
+                turns.Add(CreatAIDiceTurn(pb));
+            }
+
+            foreach (PlayerBase pb in _players)
             {
                 if (!pb.HP.alive) continue;
 
@@ -56,18 +61,46 @@ namespace Cards
             _currentTurn.OnTurnEnd -= CurrentTurn_OnTurnEnd;
         }
 
-        private Turn CreatTurn(PlayerBase pb)
+        private Turn CreatAIDiceTurn(PlayerBase pb)
         {
             Turn turn = new Turn();
-         
+
             List<StepBase> steps = new List<StepBase>
             {
-               new StepBase(StepType.start),
                new StepBase(StepType.dice),
-               new StepBase(StepType.action),
-               new StepBase(StepType.shop),
-               new StepBase (StepType.end),
             };
+
+            turn.Init(steps, pb);
+
+            return turn;
+        }
+
+
+        private Turn CreatTurn(PlayerBase pb)
+        {
+            List<StepBase> steps;
+            Turn turn = new Turn();
+            if (pb.isHuman)
+            {
+                steps = new List<StepBase>
+                    {
+                        new StepBase(StepType.start),
+                        new StepBase(StepType.dice),
+                        new StepBase(StepType.action),
+                        new StepBase(StepType.shop),
+                        new StepBase (StepType.end),
+                    };
+            }
+            else
+            {
+                steps = new List<StepBase>
+                    {
+                        new StepBase(StepType.start),
+                        new StepBase(StepType.action),
+                        new StepBase(StepType.shop),
+                        new StepBase (StepType.end),
+                    };
+            }
 
             turn.Init(steps, pb);
 
@@ -91,6 +124,10 @@ namespace Cards
                 _currentTurn.TurnStart();
                 _currentTurn.OnTurnEnd += CurrentTurn_OnTurnEnd;
 
+
+                if (!_currentTurn.player.isHuman && _currentTurn.steps.Count==1)
+                    return;
+                
                 _currentPlayerCursor.SetActive(true);
                 _currentPlayerCursor.transform.position = _currentTurn.player.transform.position;
                 _currentPlayerCursor.transform.parent = _currentTurn.player.transform;

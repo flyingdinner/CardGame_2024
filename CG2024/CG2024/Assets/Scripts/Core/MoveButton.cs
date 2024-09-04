@@ -10,10 +10,23 @@ namespace Cards
 
         [SerializeField]
         private PlayerHuman _player;
-        
+
+        private void OnEnable()
+        {
+            if (GridHolder.CanMoveToPoint(point))
+            {
+
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        }
+
         public override void OnClick()
         {
-            _player.MoveTo(this);
+            if (GridHolder.CanMoveToPoint(point))
+                _player.MoveTo(this);
         }
     }
 }

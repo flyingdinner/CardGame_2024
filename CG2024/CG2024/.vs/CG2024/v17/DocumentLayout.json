@@ -1,0 +1,323 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|g:\\my_unity\\cardgame_2024\\cg2024\\cg2024\\assets\\scripts\\core\\player\\hpvisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\player\\hpvisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\player\\playerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\player\\playerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\levelloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\levelloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\turmmachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\turmmachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\player\\playerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\player\\playerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|g:\\my_unity\\cardgame_2024\\cg2024\\cg2024\\assets\\scripts\\core\\player\\aidicevisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\player\\aidicevisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|g:\\my_unity\\cardgame_2024\\cg2024\\cg2024\\assets\\scripts\\core\\diceuivisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\diceuivisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|g:\\my_unity\\cardgame_2024\\cg2024\\cg2024\\assets\\scripts\\core\\player\\playeruipanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\player\\playeruipanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|g:\\my_unity\\cardgame_2024\\cg2024\\cg2024\\assets\\scripts\\core\\player\\playerdicepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\player\\playerdicepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\gridholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\gridholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\player\\playerai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\player\\playerai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\player\\playerhuman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\player\\playerhuman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\player\\playerstatusvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\player\\playerstatusvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\movebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\movebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\gameloop\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameloop\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\common\\fpslimiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\common\\fpslimiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\levelcollectionso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\levelcollectionso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\assets\\scripts\\core\\levelgo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71778FC-52B9-A1CD-B3E0-80C5357EE466}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\levelgo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AIDiceVisualiser.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\AIDiceVisualiser.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\Player\\AIDiceVisualiser.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\AIDiceVisualiser.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\Player\\AIDiceVisualiser.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T15:47:53.386Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DiceUIVisualizer.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\DiceUIVisualizer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\DiceUIVisualizer.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\DiceUIVisualizer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\DiceUIVisualizer.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T15:51:11.022Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlayerUIPanel.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerUIPanel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\Player\\PlayerUIPanel.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerUIPanel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\Player\\PlayerUIPanel.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAjwB4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T15:51:30.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlayerDicePanel.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerDicePanel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\Player\\PlayerDicePanel.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerDicePanel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\Player\\PlayerDicePanel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T15:48:34.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HPVisualiser.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\HPVisualiser.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\Player\\HPVisualiser.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\HPVisualiser.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\Player\\HPVisualiser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T14:58:41.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PlayerStatusVisualizer.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerStatusVisualizer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\Player\\PlayerStatusVisualizer.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerStatusVisualizer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\Player\\PlayerStatusVisualizer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAoAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPBSURBVEhL7VRNbBNXEJ798a6x4rUwsRNCUqTaB2REEUgVFVWlVVUJ9cKB4q24VeoBIQ5FcEAQVWoOvaWuOCSHgoTKCW1yqFREG4sEIyVyiQKoCikQ1mkcWybOgmNvnJ\u002B1vfs6s4QcUCu11yqftfu8u9/MvDff9x5s4/8PbnOE2dlZuSbXuqfyU/Lo81EwFg2oN\u002BogSRLEw3EazeEvh03ilqxSZKGyELn8y2XA0bydvG2FoqHua1PX5OvZ6zYoUDS\u002BMmzi8nQjUHKRiSnGmA4MdBBB50RO5zhO53le93G\u002B5CYV/K4/iVxdcAUdWpCk5AIIKdEVdfycYhXW85q5uYLpwrT6wnpx8v7Cfc2sm5G6XYeQPwSSKIHIi96FzL7TH50eoORpI518WHio3jHuwPLacmZPaM\u002BM\u002Bq6qPTWfRh4UH5g8xw8hfyj3dS6DkQAv6y/Vylrl7Pif49Amt8HBzoP2oe5DxWhb1OaQWbSKsNHcMANuQHF451ipVto/kZ\u002BAFXsFXObuL1vlnru5u8pqcxWwAwrj2DGM\u002BwNTZwQqEP0kqs5X5lWaOc4EThw4kQ9IgfOtVusHbNdQtVEd4nhu8vDew2Z9o/5be6BdSXQk3p8pz1CRH0\u002B9d2rwzIdnPnBcJ/xk6Ukek5/nBG6kMlZZ81bwuPQYJJ8EXUoXBHyBTGewcxhnklUUxRP1DT7HH8J4VXtlOswBWZABNTLPfXzOwInYE/MT9Gzj/5zRa3ixnsjUguX1Zdit7Ib15vq9YDA48HZyAjmtXC3HCtVCe7FaBNvBXIy1X8lciT0zn8nYZnqWkRqLfxuPUIxXoOW2wHVdQLe8FvQf8MYtY8aY1n\u002BvH9AYgG3Rbv5\u002BM3Xx54s96dk05elmwL4jd1GMVwDF9MQtr5RhrjJHr/4WKLDFAz/SFeqaObr3qBeDjpnpCHaMqDHViu2KUYss1CDNeEYio9sR\u002B6L7gHpKy6YlX/rpUuLIO0cg3BaGRqMB\u002BXqeNp2JGlHbBs2qyeHmiz4qPYLaRm341he3fsXiPVezV\u002BP4Loez/z7XlzO2ChxPHIel1SW4MXWDWqSh9VRqF8/wEvByeZBAGqTkxJd5WXccJ0Pf0V1LqJdlWuYFcEHG5DYX5grEI3gbLfs8qy6uLJ7M5rNadb0aaTpN2BnYCX7RDz7B5204dEZf76e933hR/wFbZ9Ho9GiMCSw1uTAZH58bByyIORmEdoQgEU2QfQf7P\u002Bsf2KT/a2ydRbZsF9FNF3DZGjkDNaFWaVyL03Dpmm\u002BHj86ZbWzjbQD8BfQkxxdaIgF3AAAAAElFTkSuQmCC",
+              "WhenOpened": "2024-09-04T13:56:37.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MoveButton.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\MoveButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\MoveButton.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\MoveButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\MoveButton.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAApAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPBSURBVEhL7VRNbBNXEJ798a6x4rUwsRNCUqTaB2REEUgVFVWlVVUJ9cKB4q24VeoBIQ5FcEAQVWoOvaWuOCSHgoTKCW1yqFREG4sEIyVyiQKoCikQ1mkcWybOgmNvnJ\u002B1vfs6s4QcUCu11yqftfu8u9/MvDff9x5s4/8PbnOE2dlZuSbXuqfyU/Lo81EwFg2oN\u002BogSRLEw3EazeEvh03ilqxSZKGyELn8y2XA0bydvG2FoqHua1PX5OvZ6zYoUDS\u002BMmzi8nQjUHKRiSnGmA4MdBBB50RO5zhO53le93G\u002B5CYV/K4/iVxdcAUdWpCk5AIIKdEVdfycYhXW85q5uYLpwrT6wnpx8v7Cfc2sm5G6XYeQPwSSKIHIi96FzL7TH50eoORpI518WHio3jHuwPLacmZPaM\u002BM\u002Bq6qPTWfRh4UH5g8xw8hfyj3dS6DkQAv6y/Vylrl7Pif49Amt8HBzoP2oe5DxWhb1OaQWbSKsNHcMANuQHF451ipVto/kZ\u002BAFXsFXObuL1vlnru5u8pqcxWwAwrj2DGM\u002BwNTZwQqEP0kqs5X5lWaOc4EThw4kQ9IgfOtVusHbNdQtVEd4nhu8vDew2Z9o/5be6BdSXQk3p8pz1CRH0\u002B9d2rwzIdnPnBcJ/xk6Ukek5/nBG6kMlZZ81bwuPQYJJ8EXUoXBHyBTGewcxhnklUUxRP1DT7HH8J4VXtlOswBWZABNTLPfXzOwInYE/MT9Gzj/5zRa3ixnsjUguX1Zdit7Ib15vq9YDA48HZyAjmtXC3HCtVCe7FaBNvBXIy1X8lciT0zn8nYZnqWkRqLfxuPUIxXoOW2wHVdQLe8FvQf8MYtY8aY1n\u002BvH9AYgG3Rbv5\u002BM3Xx54s96dk05elmwL4jd1GMVwDF9MQtr5RhrjJHr/4WKLDFAz/SFeqaObr3qBeDjpnpCHaMqDHViu2KUYss1CDNeEYio9sR\u002B6L7gHpKy6YlX/rpUuLIO0cg3BaGRqMB\u002BXqeNp2JGlHbBs2qyeHmiz4qPYLaRm341he3fsXiPVezV\u002BP4Loez/z7XlzO2ChxPHIel1SW4MXWDWqSh9VRqF8/wEvByeZBAGqTkxJd5WXccJ0Pf0V1LqJdlWuYFcEHG5DYX5grEI3gbLfs8qy6uLJ7M5rNadb0aaTpN2BnYCX7RDz7B5204dEZf76e933hR/wFbZ9Ho9GiMCSw1uTAZH58bByyIORmEdoQgEU2QfQf7P\u002Bsf2KT/a2ydRbZsF9FNF3DZGjkDNaFWaVyL03Dpmm\u002BHj86ZbWzjbQD8BfQkxxdaIgF3AAAAAElFTkSuQmCC",
+              "WhenOpened": "2024-09-04T13:21:20.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PlayerHuman.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerHuman.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\Player\\PlayerHuman.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerHuman.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\Player\\PlayerHuman.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwMAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T09:00:14.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerBase.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\Player\\PlayerBase.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\Player\\PlayerBase.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAAAJQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T08:40:34.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PlayerAI.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerAI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\Player\\PlayerAI.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerAI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\Player\\PlayerAI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T08:40:31.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FPSLimiter.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Common\\FPSLimiter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Common\\FPSLimiter.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Common\\FPSLimiter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Common\\FPSLimiter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPBSURBVEhL7VRNbBNXEJ798a6x4rUwsRNCUqTaB2REEUgVFVWlVVUJ9cKB4q24VeoBIQ5FcEAQVWoOvaWuOCSHgoTKCW1yqFREG4sEIyVyiQKoCikQ1mkcWybOgmNvnJ\u002B1vfs6s4QcUCu11yqftfu8u9/MvDff9x5s4/8PbnOE2dlZuSbXuqfyU/Lo81EwFg2oN\u002BogSRLEw3EazeEvh03ilqxSZKGyELn8y2XA0bydvG2FoqHua1PX5OvZ6zYoUDS\u002BMmzi8nQjUHKRiSnGmA4MdBBB50RO5zhO53le93G\u002B5CYV/K4/iVxdcAUdWpCk5AIIKdEVdfycYhXW85q5uYLpwrT6wnpx8v7Cfc2sm5G6XYeQPwSSKIHIi96FzL7TH50eoORpI518WHio3jHuwPLacmZPaM\u002BM\u002Bq6qPTWfRh4UH5g8xw8hfyj3dS6DkQAv6y/Vylrl7Pif49Amt8HBzoP2oe5DxWhb1OaQWbSKsNHcMANuQHF451ipVto/kZ\u002BAFXsFXObuL1vlnru5u8pqcxWwAwrj2DGM\u002BwNTZwQqEP0kqs5X5lWaOc4EThw4kQ9IgfOtVusHbNdQtVEd4nhu8vDew2Z9o/5be6BdSXQk3p8pz1CRH0\u002B9d2rwzIdnPnBcJ/xk6Ukek5/nBG6kMlZZ81bwuPQYJJ8EXUoXBHyBTGewcxhnklUUxRP1DT7HH8J4VXtlOswBWZABNTLPfXzOwInYE/MT9Gzj/5zRa3ixnsjUguX1Zdit7Ib15vq9YDA48HZyAjmtXC3HCtVCe7FaBNvBXIy1X8lciT0zn8nYZnqWkRqLfxuPUIxXoOW2wHVdQLe8FvQf8MYtY8aY1n\u002BvH9AYgG3Rbv5\u002BM3Xx54s96dk05elmwL4jd1GMVwDF9MQtr5RhrjJHr/4WKLDFAz/SFeqaObr3qBeDjpnpCHaMqDHViu2KUYss1CDNeEYio9sR\u002B6L7gHpKy6YlX/rpUuLIO0cg3BaGRqMB\u002BXqeNp2JGlHbBs2qyeHmiz4qPYLaRm341he3fsXiPVezV\u002BP4Loez/z7XlzO2ChxPHIel1SW4MXWDWqSh9VRqF8/wEvByeZBAGqTkxJd5WXccJ0Pf0V1LqJdlWuYFcEHG5DYX5grEI3gbLfs8qy6uLJ7M5rNadb0aaTpN2BnYCX7RDz7B5204dEZf76e933hR/wFbZ9Ho9GiMCSw1uTAZH58bByyIORmEdoQgEU2QfQf7P\u002Bsf2KT/a2ydRbZsF9FNF3DZGjkDNaFWaVyL03Dpmm\u002BHj86ZbWzjbQD8BfQkxxdaIgF3AAAAAElFTkSuQmCC",
+              "WhenOpened": "2024-09-04T08:26:10.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LevelCollectionSO.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\LevelCollectionSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\LevelCollectionSO.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\LevelCollectionSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\LevelCollectionSO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA3AAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPBSURBVEhL7VRNbBNXEJ798a6x4rUwsRNCUqTaB2REEUgVFVWlVVUJ9cKB4q24VeoBIQ5FcEAQVWoOvaWuOCSHgoTKCW1yqFREG4sEIyVyiQKoCikQ1mkcWybOgmNvnJ\u002B1vfs6s4QcUCu11yqftfu8u9/MvDff9x5s4/8PbnOE2dlZuSbXuqfyU/Lo81EwFg2oN\u002BogSRLEw3EazeEvh03ilqxSZKGyELn8y2XA0bydvG2FoqHua1PX5OvZ6zYoUDS\u002BMmzi8nQjUHKRiSnGmA4MdBBB50RO5zhO53le93G\u002B5CYV/K4/iVxdcAUdWpCk5AIIKdEVdfycYhXW85q5uYLpwrT6wnpx8v7Cfc2sm5G6XYeQPwSSKIHIi96FzL7TH50eoORpI518WHio3jHuwPLacmZPaM\u002BM\u002Bq6qPTWfRh4UH5g8xw8hfyj3dS6DkQAv6y/Vylrl7Pif49Amt8HBzoP2oe5DxWhb1OaQWbSKsNHcMANuQHF451ipVto/kZ\u002BAFXsFXObuL1vlnru5u8pqcxWwAwrj2DGM\u002BwNTZwQqEP0kqs5X5lWaOc4EThw4kQ9IgfOtVusHbNdQtVEd4nhu8vDew2Z9o/5be6BdSXQk3p8pz1CRH0\u002B9d2rwzIdnPnBcJ/xk6Ukek5/nBG6kMlZZ81bwuPQYJJ8EXUoXBHyBTGewcxhnklUUxRP1DT7HH8J4VXtlOswBWZABNTLPfXzOwInYE/MT9Gzj/5zRa3ixnsjUguX1Zdit7Ib15vq9YDA48HZyAjmtXC3HCtVCe7FaBNvBXIy1X8lciT0zn8nYZnqWkRqLfxuPUIxXoOW2wHVdQLe8FvQf8MYtY8aY1n\u002BvH9AYgG3Rbv5\u002BM3Xx54s96dk05elmwL4jd1GMVwDF9MQtr5RhrjJHr/4WKLDFAz/SFeqaObr3qBeDjpnpCHaMqDHViu2KUYss1CDNeEYio9sR\u002B6L7gHpKy6YlX/rpUuLIO0cg3BaGRqMB\u002BXqeNp2JGlHbBs2qyeHmiz4qPYLaRm341he3fsXiPVezV\u002BP4Loez/z7XlzO2ChxPHIel1SW4MXWDWqSh9VRqF8/wEvByeZBAGqTkxJd5WXccJ0Pf0V1LqJdlWuYFcEHG5DYX5grEI3gbLfs8qy6uLJ7M5rNadb0aaTpN2BnYCX7RDz7B5204dEZf76e933hR/wFbZ9Ho9GiMCSw1uTAZH58bByyIORmEdoQgEU2QfQf7P\u002Bsf2KT/a2ydRbZsF9FNF3DZGjkDNaFWaVyL03Dpmm\u002BHj86ZbWzjbQD8BfQkxxdaIgF3AAAAAElFTkSuQmCC",
+              "WhenOpened": "2024-09-04T08:25:57.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerService.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerService.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\Player\\PlayerService.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\Player\\PlayerService.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\Player\\PlayerService.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAQwGUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T08:10:27.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TurmMachine.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\TurmMachine.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\TurmMachine.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\TurmMachine.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\TurmMachine.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAwIEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T08:09:07.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GameLoop.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\GameLoop\\GameLoop.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameLoop\\GameLoop.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\GameLoop\\GameLoop.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameLoop\\GameLoop.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAkwGAAAAA6AAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPBSURBVEhL7VRNbBNXEJ798a6x4rUwsRNCUqTaB2REEUgVFVWlVVUJ9cKB4q24VeoBIQ5FcEAQVWoOvaWuOCSHgoTKCW1yqFREG4sEIyVyiQKoCikQ1mkcWybOgmNvnJ\u002B1vfs6s4QcUCu11yqftfu8u9/MvDff9x5s4/8PbnOE2dlZuSbXuqfyU/Lo81EwFg2oN\u002BogSRLEw3EazeEvh03ilqxSZKGyELn8y2XA0bydvG2FoqHua1PX5OvZ6zYoUDS\u002BMmzi8nQjUHKRiSnGmA4MdBBB50RO5zhO53le93G\u002B5CYV/K4/iVxdcAUdWpCk5AIIKdEVdfycYhXW85q5uYLpwrT6wnpx8v7Cfc2sm5G6XYeQPwSSKIHIi96FzL7TH50eoORpI518WHio3jHuwPLacmZPaM\u002BM\u002Bq6qPTWfRh4UH5g8xw8hfyj3dS6DkQAv6y/Vylrl7Pif49Amt8HBzoP2oe5DxWhb1OaQWbSKsNHcMANuQHF451ipVto/kZ\u002BAFXsFXObuL1vlnru5u8pqcxWwAwrj2DGM\u002BwNTZwQqEP0kqs5X5lWaOc4EThw4kQ9IgfOtVusHbNdQtVEd4nhu8vDew2Z9o/5be6BdSXQk3p8pz1CRH0\u002B9d2rwzIdnPnBcJ/xk6Ukek5/nBG6kMlZZ81bwuPQYJJ8EXUoXBHyBTGewcxhnklUUxRP1DT7HH8J4VXtlOswBWZABNTLPfXzOwInYE/MT9Gzj/5zRa3ixnsjUguX1Zdit7Ib15vq9YDA48HZyAjmtXC3HCtVCe7FaBNvBXIy1X8lciT0zn8nYZnqWkRqLfxuPUIxXoOW2wHVdQLe8FvQf8MYtY8aY1n\u002BvH9AYgG3Rbv5\u002BM3Xx54s96dk05elmwL4jd1GMVwDF9MQtr5RhrjJHr/4WKLDFAz/SFeqaObr3qBeDjpnpCHaMqDHViu2KUYss1CDNeEYio9sR\u002B6L7gHpKy6YlX/rpUuLIO0cg3BaGRqMB\u002BXqeNp2JGlHbBs2qyeHmiz4qPYLaRm341he3fsXiPVezV\u002BP4Loez/z7XlzO2ChxPHIel1SW4MXWDWqSh9VRqF8/wEvByeZBAGqTkxJd5WXccJ0Pf0V1LqJdlWuYFcEHG5DYX5grEI3gbLfs8qy6uLJ7M5rNadb0aaTpN2BnYCX7RDz7B5204dEZf76e933hR/wFbZ9Ho9GiMCSw1uTAZH58bByyIORmEdoQgEU2QfQf7P\u002Bsf2KT/a2ydRbZsF9FNF3DZGjkDNaFWaVyL03Dpmm\u002BHj86ZbWzjbQD8BfQkxxdaIgF3AAAAAElFTkSuQmCC",
+              "WhenOpened": "2024-09-04T08:08:04.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LevelGO.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\LevelGO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\LevelGO.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\LevelGO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\LevelGO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABSAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPBSURBVEhL7VRNbBNXEJ798a6x4rUwsRNCUqTaB2REEUgVFVWlVVUJ9cKB4q24VeoBIQ5FcEAQVWoOvaWuOCSHgoTKCW1yqFREG4sEIyVyiQKoCikQ1mkcWybOgmNvnJ\u002B1vfs6s4QcUCu11yqftfu8u9/MvDff9x5s4/8PbnOE2dlZuSbXuqfyU/Lo81EwFg2oN\u002BogSRLEw3EazeEvh03ilqxSZKGyELn8y2XA0bydvG2FoqHua1PX5OvZ6zYoUDS\u002BMmzi8nQjUHKRiSnGmA4MdBBB50RO5zhO53le93G\u002B5CYV/K4/iVxdcAUdWpCk5AIIKdEVdfycYhXW85q5uYLpwrT6wnpx8v7Cfc2sm5G6XYeQPwSSKIHIi96FzL7TH50eoORpI518WHio3jHuwPLacmZPaM\u002BM\u002Bq6qPTWfRh4UH5g8xw8hfyj3dS6DkQAv6y/Vylrl7Pif49Amt8HBzoP2oe5DxWhb1OaQWbSKsNHcMANuQHF451ipVto/kZ\u002BAFXsFXObuL1vlnru5u8pqcxWwAwrj2DGM\u002BwNTZwQqEP0kqs5X5lWaOc4EThw4kQ9IgfOtVusHbNdQtVEd4nhu8vDew2Z9o/5be6BdSXQk3p8pz1CRH0\u002B9d2rwzIdnPnBcJ/xk6Ukek5/nBG6kMlZZ81bwuPQYJJ8EXUoXBHyBTGewcxhnklUUxRP1DT7HH8J4VXtlOswBWZABNTLPfXzOwInYE/MT9Gzj/5zRa3ixnsjUguX1Zdit7Ib15vq9YDA48HZyAjmtXC3HCtVCe7FaBNvBXIy1X8lciT0zn8nYZnqWkRqLfxuPUIxXoOW2wHVdQLe8FvQf8MYtY8aY1n\u002BvH9AYgG3Rbv5\u002BM3Xx54s96dk05elmwL4jd1GMVwDF9MQtr5RhrjJHr/4WKLDFAz/SFeqaObr3qBeDjpnpCHaMqDHViu2KUYss1CDNeEYio9sR\u002B6L7gHpKy6YlX/rpUuLIO0cg3BaGRqMB\u002BXqeNp2JGlHbBs2qyeHmiz4qPYLaRm341he3fsXiPVezV\u002BP4Loez/z7XlzO2ChxPHIel1SW4MXWDWqSh9VRqF8/wEvByeZBAGqTkxJd5WXccJ0Pf0V1LqJdlWuYFcEHG5DYX5grEI3gbLfs8qy6uLJ7M5rNadb0aaTpN2BnYCX7RDz7B5204dEZf76e933hR/wFbZ9Ho9GiMCSw1uTAZH58bByyIORmEdoQgEU2QfQf7P\u002Bsf2KT/a2ydRbZsF9FNF3DZGjkDNaFWaVyL03Dpmm\u002BHj86ZbWzjbQD8BfQkxxdaIgF3AAAAAElFTkSuQmCC",
+              "WhenOpened": "2024-09-04T08:02:37.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GridHolder.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\GridHolder.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\GridHolder.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\GridHolder.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\GridHolder.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwBkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T07:53:39.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LevelLoader.cs",
+              "DocumentMoniker": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\LevelLoader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Core\\LevelLoader.cs",
+              "ToolTip": "G:\\My_Unity\\CardGame_2024\\CG2024\\CG2024\\Assets\\Scripts\\Core\\LevelLoader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Core\\LevelLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T07:53:20.512Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

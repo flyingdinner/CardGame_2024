@@ -478,6 +478,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 523776439436078578}
     m_Modifications:
+    - target: {fileID: 53865527481553708, guid: 0ac4b7b813140954689ce88ac1d4fea2, type: 3}
+      propertyPath: _playerBase
+      value: 
+      objectReference: {fileID: 523776439436078589}
+    - target: {fileID: 2964639609803981938, guid: 0ac4b7b813140954689ce88ac1d4fea2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506750164194122024, guid: 0ac4b7b813140954689ce88ac1d4fea2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 523776439436078589}
     - target: {fileID: 4160088977660169207, guid: 0ac4b7b813140954689ce88ac1d4fea2, type: 3}
       propertyPath: m_Name
       value: OnMeLight
