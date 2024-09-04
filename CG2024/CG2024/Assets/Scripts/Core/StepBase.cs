@@ -10,7 +10,6 @@ namespace Cards
         none,
         start,
         dice,
-        move,
         action,
         shop,
         end,

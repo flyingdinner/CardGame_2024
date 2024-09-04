@@ -21,9 +21,7 @@ namespace Cards
         fail,
         move,
         bonusDamage,
-    }
-    
-
+    }  
 
     public class PlayerBase : Button3D, IAtackTarget
     {
@@ -57,20 +55,20 @@ namespace Cards
         protected System.Random random = new System.Random();
         [SerializeField] protected List<DiceValue> _currentDices = new List<DiceValue>();
         [SerializeField] protected List<DiceValue> _currentBonusDices = new List<DiceValue>();
-
+        [SerializeField] protected Transform _shootPosition;
+        [SerializeField] protected Transform _headPivot;
 
         private void OnEnable()
         {
+            _attackBullet.SetActive(false);
             anim.PlayAlive();
             HP.OnDead += HP_OnDead;
         }
-
 
         private void OnDisable()
         {
             HP.OnDead -= HP_OnDead;
         }
-
 
         private void HP_OnDead(HPService obj)
         {
@@ -88,7 +86,6 @@ namespace Cards
         public void StartStep(StepBase step, Action callback)
         {
 
-            //Debug.Log("PlayerBase >> " + gameObject.name + " > start step :" + step.type);
             switch (step.type)
             {
                 case StepType.start:
@@ -101,10 +98,6 @@ namespace Cards
 
                 case StepType.action:
                     StepProcess_Action(step, callback);
-                    break;
-
-                case StepType.move:
-                    StepProcess_Move(step, callback);
                     break;
 
                 case StepType.shop:
@@ -141,12 +134,6 @@ namespace Cards
             StartCoroutine(IE_StepProcess_Action(step, callback));
         }
 
-        protected virtual void StepProcess_Move(StepBase step, Action callback)
-        {
-            //TO DO
-            callback?.Invoke();
-        }
-
         protected virtual void StepProcess_Shop(StepBase step, Action callback)
         {
             //TO DO
@@ -166,11 +153,12 @@ namespace Cards
                 yield return IE_CheckCardForStepAction(cardsInHend[i], step);
             }
 
+
+
             // Start Animation
             yield return new WaitForSeconds(0.5f);
             callback.Invoke();
         }
-
 
         private IEnumerator IE_StepProcess_End(StepBase step, Action callback)
         {
@@ -178,6 +166,13 @@ namespace Cards
             {
                 yield return new WaitForSeconds(0.05f);
                 yield return IE_CheckCardForStepAction(cardsInHend[i], step);
+            }
+
+            while (TryUseDice(DiceValue.heart))
+            {
+                HP.AddDamage(-1);
+                PFXPlayer.instanse.PlayPfx(PFXType.heal,transform);
+                yield return new WaitForSeconds(0.3f);
             }
 
             // End animation
@@ -248,10 +243,11 @@ namespace Cards
 
         protected IEnumerator IE_Attack(IAtackTarget target)
         {
+            LoockAt(target.Position());
             //animation
-            CardBonusDamage cardBonusDamage = new CardBonusDamage();
+            CardBonusDamage cardBonusDamage = new CardBonusDamage();            
 
-            foreach(CardBase cb in cardsInHend)
+            foreach (CardBase cb in cardsInHend)
             {
                 if (cardBonusDamage.TryAddDamageCard(cb))
                 {
@@ -262,16 +258,15 @@ namespace Cards
 
             //            
             cardHolder.SetCardBonusDamage(cardBonusDamage);
-
             yield return new WaitForSeconds(0.1f);
 
+            PFXPlayer.instanse.PlayPfx(PFXType.shoot, _shootPosition);
             _attackBullet.SetActive(true);
-            _attackBullet.transform.position = transform.position;
-            Vector3 startPosition = transform.position;
-            Vector3 targetPoint = target.Position();
+            _attackBullet.transform.position = _shootPosition.position;
+            Vector3 startPosition = _shootPosition.position;
+            Vector3 targetPoint = target.Position() + Vector3.up;
             float timeElapsed = 0f;
-            float duration = 0.2f;
-
+            float duration = 0.1f;
 
             while (timeElapsed < duration)
             {
@@ -298,6 +293,17 @@ namespace Cards
             }
         }
 
+        protected void LoockAt(Vector3 target)
+        {
+            // Вычисляем направление от объекта к цели на плоскости XZ
+            Vector3 direction = new Vector3(target.x - transform.position.x, 0, target.z - transform.position.z);
+
+            // Создаем поворот, направленный в сторону цели
+            Quaternion rotation = Quaternion.LookRotation(direction);
+
+            // Применяем поворот к объекту
+            _headPivot.rotation = rotation;
+        }
 
         protected virtual void ReInitTurn()
         {
@@ -338,10 +344,11 @@ namespace Cards
 
         protected IEnumerator UseAttackOnTarget(IAtackTarget target)
         {
+            PFXPlayer.instanse.PlayPfx(PFXType.hit, target.Position());
             //кістку асктіон вже використали
-
             int realDamage = cardHolder.UseCardBonusDamage(baseDammage + baseBonusDammage * GetDiceCountByType(DiceValue.bonusDamage));
             target.IncomingDamage(realDamage);
+
             yield return new WaitForSeconds(0.1f);
             Debug.Log("cardHolder.HaveAoEBonus : " + cardHolder.HaveAoEBonus());
             if (cardHolder.HaveAoEBonus())
@@ -356,7 +363,7 @@ namespace Cards
             }
         }
 
-        protected bool TryUseDice(DiceValue value)
+        protected virtual bool TryUseDice(DiceValue value)
         {
             if (_currentDices.Contains(value))
             {

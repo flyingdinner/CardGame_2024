@@ -63,7 +63,6 @@ namespace Cards
                new StepBase(StepType.start),
                new StepBase(StepType.dice),
                new StepBase(StepType.action),
-               new StepBase(StepType.move),
                new StepBase(StepType.shop),
                new StepBase (StepType.end),
             };

@@ -76,19 +76,15 @@ namespace Cards
         private IEnumerator IE_EndDice()
         {
             yield return new WaitForSeconds(0.3f);
-            Debug.Log("energy count: " + _energy);
             while (true)
             {
-                Debug.Log("-----1 ");
                 if (TryUseDice(DiceValue.energy))
                 {
                     _energy++;
-                    Debug.Log("energy count: " + _energy);
                     OnStatusCheng?.Invoke(this);
                 }
                 else
                 {
-                    Debug.Log("-----2 ");
                     break;
                 }
                 yield return new WaitForSeconds(0.1f);
@@ -237,6 +233,26 @@ namespace Cards
             //---
             OnStatusCheng?.Invoke(this);
         }
+
+        protected override bool TryUseDice(DiceValue value)
+        {
+            if (_currentDices.Contains(value))
+            {
+                _currentDices.Remove(value);
+                OnStatusCheng?.Invoke(this);
+                return true;
+            }
+
+            if (_currentBonusDices.Contains(value))
+            {
+                _currentBonusDices.Remove(value);
+                OnStatusCheng?.Invoke(this);
+                return true;
+            }
+
+            return false;
+        }
+
         //-------------------------------------------------------------------------------
         //                              Shop
         //-------------------------------------------------------------------------------

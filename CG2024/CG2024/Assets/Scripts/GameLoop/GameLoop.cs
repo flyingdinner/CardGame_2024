@@ -9,12 +9,15 @@ namespace Cards
         [SerializeField] private PlayerHuman _playerHuman;
         [SerializeField] private TurmMachine _turmMachine;
         [SerializeField] private PlayerService _playerService;
+        [SerializeField] private LevelLoader _loader;
 
         [Header("-- UI Panels --")]
         [SerializeField] private GameObject _startGamePanel;
         [SerializeField] private GameObject _nextLevelPanel;
         [SerializeField] private GameObject _loserLevelPanel;
         [SerializeField] private GameObject _playerInGameUI;
+
+        private int _currentLevel = 0;
  
         void Start()
         {
@@ -29,6 +32,8 @@ namespace Cards
 
         private IEnumerator Ie_StartGameLoop()
         {
+            _loader.LoadLevel(_currentLevel);
+
             _startGamePanel.SetActive(false);//TODO animation
             yield return new WaitForSeconds(1f);
 
@@ -57,6 +62,11 @@ namespace Cards
 
         private void EndGameLoop(bool win)
         {
+            if (win)
+            {
+                _currentLevel++;
+            }
+
             _turmMachine.OnPlyerTurnEnd -= TurmMachine_OnPlyerTurnEnd;
             _playerInGameUI.SetActive(false);
 
