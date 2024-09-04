@@ -26,6 +26,8 @@ namespace Cards
             playerService = GetComponent<PlayerService>();
         }
 
+        
+
         public void StartTurmMachine()
         {
             turns = new List<Turn>();

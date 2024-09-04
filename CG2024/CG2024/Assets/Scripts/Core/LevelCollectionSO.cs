@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Cards
 {
-    [CreateAssetMenu(menuName = ("Cards/CardCollection"))]
+    [CreateAssetMenu(menuName = ("Cards/LevelCollection"))]
     public class LevelCollectionSO : ScriptableObject
     {
         public GameObject[] levelsGO;

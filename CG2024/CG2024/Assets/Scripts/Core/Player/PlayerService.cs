@@ -17,34 +17,24 @@ namespace Cards
 
         public bool valid;
         [field: SerializeField] public List<PlayerBase> playersHuman { get; private set; }
-        [field: SerializeField] public List<PlayerBase> playersAI { get; private set; }
+        [field: SerializeField] public List<PlayerBase> playersAI { get; private set; } = new List<PlayerBase>();
+
+        [SerializeField] private GridHolder _gridHolder;
 
         private void OnValidate()
         {
-            playersHuman = new List<PlayerBase>();
-            playersAI = new List<PlayerBase>();
+            playersHuman = new List<PlayerBase>();            
             PlayerBase[] players = FindObjectsByType<PlayerBase>(FindObjectsSortMode.None);
 
-            foreach(PlayerBase pb in players)
-            {
-                if (pb.isHuman)
-                {
-                    playersHuman.Add(pb);
-                }
-                else
-                {
-                    playersAI.Add(pb);
-                }
-            }
+            foreach(PlayerBase pb in players)            
+                if (pb.isHuman)                
+                    playersHuman.Add(pb);     
         }
 
         private void OnEnable()
         {
             instanse = this;
-            foreach (PlayerBase pb in playersAI)
-            {
-                pb.OnTryClick += PlayersAI_OnTryClick;
-            }
+
         }
         private void OnDisable()
         {
@@ -71,6 +61,49 @@ namespace Cards
 
             return true;
         }
+
+        public void OnLevelLoaded(LevelGO level)
+        {
+            foreach (PlayerBase pb in playersAI)
+            {
+                pb.OnTryClick -= PlayersAI_OnTryClick;
+            }
+
+            RemoveOldPlayers();
+
+            _gridHolder = level.GridHolder;
+
+            playersHuman[0].transform.parent = null;
+            playersHuman[0].transform.position = level._pointPlayer.position;
+
+            playersAI = new List<PlayerBase>();
+
+            foreach (PlayerBase pb in level._NPC)
+            {
+                playersAI.Add((PlayerBase)pb);
+            }
+
+            foreach (PlayerBase pb in playersAI)
+            {
+                pb.OnTryClick += PlayersAI_OnTryClick;
+            }
+        }
+
+        private void RemoveOldPlayers()
+        {
+
+            if (playersAI != null)
+            {
+                if (playersAI.Count > 0)
+                {
+                    for (int i = 0; i < playersAI.Count; i++)
+                    {
+                        Destroy(playersAI[i]);//TODO pool
+                    }
+                }
+            }
+        }
+
 
         public List<IAtackTarget> GetAllAlive()
         {

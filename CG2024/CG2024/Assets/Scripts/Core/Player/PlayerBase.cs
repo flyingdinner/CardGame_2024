@@ -28,7 +28,6 @@ namespace Cards
         public event Action<PlayerBase> OnTryClick;
 
         public int initiative = 1;//To do
-
         public int energy => _energy;
         public float attackRange => _baseAttackRange + cardHolder.bonusDamage.rangeBonus;
 
@@ -119,6 +118,7 @@ namespace Cards
         {
             rerollCounts = rerollCountBase;
 
+
             StartCoroutine(IE_StepProcess_Dice(step, callback));
         }
 
@@ -147,13 +147,14 @@ namespace Cards
 
         private IEnumerator IE_StepProcess_Start(StepBase step, Action callback)
         {
+            _currentDices = new List<DiceValue>();
+            _currentBonusDices = new List<DiceValue>();
+
             for (int i = 0; i < cardsInHend.Count; i++)
             {
                 yield return new WaitForSeconds(0.05f);
                 yield return IE_CheckCardForStepAction(cardsInHend[i], step);
             }
-
-
 
             // Start Animation
             yield return new WaitForSeconds(0.5f);

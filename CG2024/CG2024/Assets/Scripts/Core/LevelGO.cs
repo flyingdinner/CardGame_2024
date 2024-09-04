@@ -9,6 +9,6 @@ namespace Cards
         [field: SerializeField] public Transform _pointPlayer { get; private set; }
         [field: SerializeField] public PlayerAI[] _NPC { get; private set; }
 
-
+        [field: SerializeField] public GridHolder GridHolder { get; private set; }
     }
 }

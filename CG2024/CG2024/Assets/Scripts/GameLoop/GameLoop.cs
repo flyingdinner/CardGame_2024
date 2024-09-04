@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Cards
 {
@@ -18,24 +19,26 @@ namespace Cards
         [SerializeField] private GameObject _playerInGameUI;
 
         private int _currentLevel = 0;
- 
+
         void Start()
         {
-            _startGamePanel.SetActive(true);            
+            _startGamePanel.SetActive(true);
         }
 
         public void StartGame()
         {
             _startGamePanel.SetActive(false);
-            StartCoroutine(Ie_StartGameLoop());      
+            StartCoroutine(Ie_StartGameLoop());
         }
 
         private IEnumerator Ie_StartGameLoop()
         {
             _loader.LoadLevel(_currentLevel);
 
+
             _startGamePanel.SetActive(false);//TODO animation
-            yield return new WaitForSeconds(1f);
+
+            yield return new WaitForSeconds(0.5f);
 
             _turmMachine.StartTurmMachine();
             _turmMachine.OnPlyerTurnEnd += TurmMachine_OnPlyerTurnEnd;
@@ -66,6 +69,10 @@ namespace Cards
             {
                 _currentLevel++;
             }
+            else
+            {
+                _currentLevel = 0;
+            }
 
             _turmMachine.OnPlyerTurnEnd -= TurmMachine_OnPlyerTurnEnd;
             _playerInGameUI.SetActive(false);
@@ -74,6 +81,21 @@ namespace Cards
             _nextLevelPanel.SetActive(win);
             _turmMachine.StopTurmMachine();
 
+        }
+
+        public void StartNextLevel()
+        {
+            if (_currentLevel > 0)
+            {
+                StartGame();
+                _loserLevelPanel.SetActive(false);
+                _nextLevelPanel.SetActive(false);
+            }
+            else
+            {
+                Scene currentScene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(currentScene.name);
+            }
         }
     }
 }

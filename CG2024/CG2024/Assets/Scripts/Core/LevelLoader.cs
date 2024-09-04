@@ -7,8 +7,10 @@ namespace Cards
     {
         public event Action<LevelGO> OnLevelLoaded;
 
-        [SerializeField] private LevelCollectionSO collection;
         [field: SerializeField] public LevelGO currentLevel { get; private set; }
+
+        [SerializeField] private LevelCollectionSO collection;
+        [SerializeField] private PlayerService _playerService;
 
         public void LoadLevel(int index)
         {
@@ -20,6 +22,8 @@ namespace Cards
             GameObject go = Instantiate(collection.levelsGO[index]);
             LevelGO lgo = go.GetComponent<LevelGO>();
             currentLevel = lgo;
+
+            _playerService.OnLevelLoaded(lgo);
 
             OnLevelLoaded?.Invoke(lgo);
         }
